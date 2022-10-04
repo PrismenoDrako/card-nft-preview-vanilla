@@ -1,0 +1,165 @@
+/* Establecimiento de los colores que se usarán */
+
+:root{
+    --text-color: hsl(215, 51%, 70%);
+    --price-color: hsl(178, 100%, 50%);
+    --color-hover: rgb(0, 255, 247, 0.6);
+    /* ### Neutral */
+
+    --bg-main: hsl(217, 54%, 11%);
+    --bg-card: hsl(216, 50%, 16%);
+    --line-card: hsl(215, 32%, 27%);
+    --White: hsl(0, 0%, 100%);
+}
+
+/* Reseteo de los estios por defecto del navegador */
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
+    height: 100%;
+}
+
+/* Estilos del contenedor principal que contendrá al card */
+main{
+    height: 100%;
+    background-color: var(--bg-main);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Dimensiones del contenedor card */
+
+
+.card {
+    width: 326px;
+    padding: 1.5rem;
+    background-color: var(--bg-card);
+    border-radius: 10px;
+    overflow: hidden;
+    color: var(--text-color);
+    font-size: 16px;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;    
+    box-shadow: 0px 0px 65px 20px rgba(16, 12, 34, 0.9);
+
+}
+
+
+/* Estilos de la imagen del card */
+.card--img-container{
+    width: 100%;
+    max-width: 378px;
+    max-height: 378px;
+    position: relative;
+    border-radius: 7px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card--img{
+    width: 100%;
+    height: auto;
+    
+}
+
+.card--img-hover{
+    position: absolute;
+    background-color: var(--color-hover);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0%;
+    transition: opacity 0.3s;
+}
+
+
+.card--img-hover img{
+    width: 50px;
+    height: auto;
+}
+
+/* Estilos de la seccion de detalles del card */
+
+.card--title{
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--White);
+}
+
+.card--description{
+    font-weight: 300;
+}
+
+.card--price{
+    font-weight: 400;
+    width: 100%;
+    color: var(--price-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card--price .ether{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+
+.card--price .date{
+    font-weight: 300;
+    color: var(--text-color);
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.card hr{
+    border: none;
+    height: 1px;
+    background-color: var(--line-card);
+}
+.card--creator{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+}
+
+.card--creator--avatar{
+    border: 1px solid var(--White);
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    margin-right: 15px;;
+}
+
+.creator-name{
+    color: var(--White);
+    text-decoration: none;
+}
+
+/* Estilos necesarios para los estados activos */
+
+.card--title:hover, .creator-name:hover{
+    color: var(--price-color);
+    cursor: pointer;
+}
+
+.card--img-hover:hover{
+    opacity: 90%;
+    cursor: pointer;
+}
